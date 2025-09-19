@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Plus+Jakarta+Sans:wght@400;500;700;800" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#f04299",
+              "background-light": "#f8f6f7",
+              "background-dark": "#221019",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"],
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem",
+              "lg": "1rem",
+              "xl": "1.5rem",
+              "full": "9999px"
+            },
+          },
+        },
+      };
+    </script>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<style>
+      .star-rating svg {
+        color: #e5e7eb;
+      }
+      .star-rating .filled {
+        color: #f04299;
+      }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-20 flex items-center justify-between whitespace-nowrap border-b border-slate-200/80 bg-background-light/80 px-4 py-3 backdrop-blur-sm dark:border-slate-800/80 dark:bg-background-dark/80 sm:px-10">
+<div class="flex items-center gap-4">
+<div class="h-8 w-8 text-slate-900 dark:text-white">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold text-slate-900 dark:text-white">Lash Luxe</h2>
+</div>
+<nav class="hidden items-center gap-9 md:flex">
+<a class="text-sm font-medium text-slate-700 hover:text-primary dark:text-slate-300 dark:hover:text-primary" href="#">Shop</a>
+<a class="text-sm font-medium text-slate-700 hover:text-primary dark:text-slate-300 dark:hover:text-primary" href="#">Tutorials</a>
+<a class="text-sm font-medium text-slate-700 hover:text-primary dark:text-slate-300 dark:hover:text-primary" href="#">About Us</a>
+<a class="text-sm font-medium text-slate-700 hover:text-primary dark:text-slate-300 dark:hover:text-primary" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-2">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-slate-200/60 text-slate-700 hover:bg-primary/20 hover:text-primary dark:bg-slate-800/60 dark:text-slate-300 dark:hover:bg-primary/20 dark:hover:text-primary">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</button>
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-slate-200/60 text-slate-700 hover:bg-primary/20 hover:text-primary dark:bg-slate-800/60 dark:text-slate-300 dark:hover:bg-primary/20 dark:hover:text-primary">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path>
+</svg>
+</button>
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-slate-200/60 text-slate-700 hover:bg-primary/20 hover:text-primary dark:bg-slate-800/60 dark:text-slate-300 dark:hover:bg-primary/20 dark:hover:text-primary">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path>
+</svg>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<div class="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+<div class="mb-6 flex items-center space-x-2 text-sm text-slate-500 dark:text-slate-400">
+<a class="hover:text-primary" href="#">Home</a>
+<span>/</span>
+<a class="hover:text-primary" href="#">Lashes</a>
+<span>/</span>
+<span class="font-medium text-slate-800 dark:text-slate-200">Glamour Lashes</span>
+</div>
+<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+<div>
+<div class="aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+<img alt="Glamour Lashes" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvt8PZhFvzWBRUUsqxJYnemIbMTQ99oJQprlvnJnDgr2V0INn7ez2YZ4a7-3LKU70WWISvzyJYT_KRudup3GCGvkaN5dD-0vW3DqWWFF4jlSjNhQ5u9GqEGXYri2MF0v2_2lC1KhxZT1En5btZl0jnFxTc3fIAk7MivfqRkR2Ey9L6H-4k3dt_IpUswhKzgaOqZ1bVRVezEMtJI_j9z5m4NyQYBnwCEaXmJMr69RWIPjSvL9Mfe2_Zzvsi9Obyb2EKM_qb-XukrAo"/>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-4xl">Glamour Lashes</h1>
+<p class="mt-3 text-slate-500 dark:text-slate-400">Elevate your look with our Glamour Lashes, designed for a dramatic, eye-catching effect. Perfect for special occasions or adding luxury to your everyday style.</p>
+<p class="mt-4 text-3xl font-bold text-primary">$25.00</p>
+</div>
+<div class="flex items-center">
+<div class="flex items-center star-rating">
+<svg class="h-5 w-5 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-5 w-5 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-5 w-5 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-5 w-5 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-5 w-5 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"></path>
+</svg>
+</div>
+<a class="ml-3 text-sm font-medium text-primary hover:text-primary/80" href="#reviews">125 reviews</a>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="flex-1 rounded-lg bg-primary px-6 py-3 text-base font-bold text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark">Add to Cart</button>
+<button class="rounded-lg bg-slate-200 px-6 py-3 text-base font-bold text-slate-800 hover:bg-slate-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700 dark:focus:ring-offset-background-dark">Add to Wishlist</button>
+</div>
+</div>
+</div>
+<div class="mt-16 space-y-12">
+<div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">Product Details</h3>
+<p class="mt-4 text-slate-500 dark:text-slate-400">Our Glamour Lashes are handcrafted from the finest synthetic fibers, ensuring a lightweight and comfortable wear. The unique design features a blend of long and short fibers to create a full, textured look that enhances your natural beauty. Easy to apply and reusable, these lashes are a must-have for any makeup enthusiast.</p>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">How to Apply</h3>
+<ol class="mt-4 list-decimal list-inside space-y-2 text-slate-500 dark:text-slate-400">
+<li>Gently remove lashes from the tray.</li>
+<li>Apply a thin layer of lash adhesive along the lash band.</li>
+<li>Wait 30 seconds for the adhesive to become tacky.</li>
+<li>Position the lash band along your natural lash line and press gently to secure.</li>
+<li>For a more natural look, blend your natural lashes with the false lashes using mascara.</li>
+</ol>
+</div>
+<div id="reviews">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">Customer Reviews</h3>
+<div class="mt-6 flex flex-col gap-8 md:flex-row md:items-center">
+<div class="flex flex-col items-center gap-2 text-center md:items-start md:text-left">
+<p class="text-5xl font-black text-slate-900 dark:text-white">4.8</p>
+<div class="flex star-rating">
+<svg class="h-5 w-5 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-5 w-5 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-5 w-5 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-5 w-5 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-5 w-5 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M239.2,97.29a16,16,0,0,0-13.81-11L166,81.17,142.72,25.81h0a15.95,15.95,0,0,0-29.44,0L90.07,81.17,30.61,86.32a16,16,0,0,0-9.11,28.06L66.61,153.8,53.09,212.34a16,16,0,0,0,23.84,17.34l51-31,51.11,31a16,16,0,0,0,23.84-17.34l-13.51-58.6,45.1-39.36A16,16,0,0,0,239.2,97.29Zm-15.22,5-45.1,39.36a16,16,0,0,0-5.08,15.71L187.35,216v0l-51.07-31a15.9,15.9,0,0,0-16.54,0l-51,31h0L82.2,157.4a16,16,0,0,0-5.08-15.71L32,102.35a.37.37,0,0,1,0-.09l59.44-5.14a16,16,0,0,0,13.35-9.75L128,32.08l23.2,55.29a16,16,0,0,0,13.35,9.75L224,102.26S224,102.32,224,102.33Z"></path>
+</svg>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Based on 125 reviews</p>
+</div>
+<div class="w-full flex-1 space-y-1">
+<div class="flex items-center gap-4 text-sm">
+<p class="w-4 text-slate-500 dark:text-slate-400">5</p>
+<div class="h-2 flex-1 rounded-full bg-slate-200 dark:bg-slate-700">
+<div class="h-2 rounded-full bg-primary" style="width: 70%"></div>
+</div>
+<p class="w-8 text-right text-slate-500 dark:text-slate-400">70%</p>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<p class="w-4 text-slate-500 dark:text-slate-400">4</p>
+<div class="h-2 flex-1 rounded-full bg-slate-200 dark:bg-slate-700">
+<div class="h-2 rounded-full bg-primary" style="width: 20%"></div>
+</div>
+<p class="w-8 text-right text-slate-500 dark:text-slate-400">20%</p>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<p class="w-4 text-slate-500 dark:text-slate-400">3</p>
+<div class="h-2 flex-1 rounded-full bg-slate-200 dark:bg-slate-700">
+<div class="h-2 rounded-full bg-primary" style="width: 5%"></div>
+</div>
+<p class="w-8 text-right text-slate-500 dark:text-slate-400">5%</p>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<p class="w-4 text-slate-500 dark:text-slate-400">2</p>
+<div class="h-2 flex-1 rounded-full bg-slate-200 dark:bg-slate-700">
+<div class="h-2 rounded-full bg-primary" style="width: 3%"></div>
+</div>
+<p class="w-8 text-right text-slate-500 dark:text-slate-400">3%</p>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<p class="w-4 text-slate-500 dark:text-slate-400">1</p>
+<div class="h-2 flex-1 rounded-full bg-slate-200 dark:bg-slate-700">
+<div class="h-2 rounded-full bg-primary" style="width: 2%"></div>
+</div>
+<p class="w-8 text-right text-slate-500 dark:text-slate-400">2%</p>
+</div>
+</div>
+</div>
+<div class="mt-10 space-y-8 border-t border-slate-200 pt-10 dark:border-slate-800">
+<div class="flex flex-col gap-4 sm:flex-row">
+<img alt="Sophia Bennett" class="h-12 w-12 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcmWuEW7rnKm7CAeYWtnYMOvhiHxqlLs7XuyiCBayYyuRCKgx0do9MORkadOOHwLS0B4Gf5saRBN9Ny2vcnb1J3IajZCRJN610HbDDv9lwemqgauRq01egZntJFcHYNow3CNdQXuDuzpeBA5NDkFvWavGn6q7373R7ZZXfadRRNzjBG4gMaTuZjnzLTVK1q1UaZHjj5IbV2iDOk0X6kRiMQGC4Pf0buQ-gGgsEJCwa-I0SlDQzFVc5-Q9hau9M19sWKkZ2xrZH2Lo"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-medium text-slate-900 dark:text-white">Sophia Bennett</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">1 month ago</p>
+</div>
+<div class="flex star-rating">
+<svg class="h-4 w-4 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-4 w-4 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-4 w-4 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-4 w-4 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+<svg class="h-4 w-4 filled" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"></path>
+</svg>
+</div>
+</div>
+<p class="mt-3 text-slate-500 dark:text-slate-400">These lashes are absolutely stunning! They add the perfect amount of drama without being too heavy. I wore them to a wedding and received so many compliments.</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">Frequently Asked Questions</h3>
+<div class="mt-6 space-y-4">
+<details class="group rounded-lg bg-slate-50 p-4 dark:bg-slate-800/50" open="">
+<summary class="flex cursor-pointer items-center justify-between font-medium text-slate-900 dark:text-white">
+                    Are these lashes reusable?
+                    <svg class="h-5 w-5 transition-transform duration-300 group-open:rotate-180" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+</svg>
+</summary>
+<p class="mt-3 text-slate-500 dark:text-slate-400">Yes, our Glamour Lashes are reusable. With proper care, you can wear them multiple times. Gently remove the adhesive after each use and store them in the original packaging to maintain their shape.</p>
+</details>
+<details class="group rounded-lg bg-slate-50 p-4 dark:bg-slate-800/50">
+<summary class="flex cursor-pointer items-center justify-between font-medium text-slate-900 dark:text-white">
+                    What type of adhesive should I use?
+                    <svg class="h-5 w-5 transition-transform duration-300 group-open:rotate-180" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+</svg>
+</summary>
+<p class="mt-3 text-slate-500 dark:text-slate-400">We recommend using a latex-free lash adhesive for the best results. Our Lash Luxe adhesive is specially formulated for our lashes and provides a strong, all-day hold.</p>
+</details>
+<details class="group rounded-lg bg-slate-50 p-4 dark:bg-slate-800/50">
+<summary class="flex cursor-pointer items-center justify-between font-medium text-slate-900 dark:text-white">
+                    How do I clean the lashes?
+                    <svg class="h-5 w-5 transition-transform duration-300 group-open:rotate-180" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+<path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
+</svg>
+</summary>
+<p class="mt-3 text-slate-500 dark:text-slate-400">To clean, gently peel off any excess adhesive from the lash band with tweezers. You can use a cotton swab with a small amount of oil-free makeup remover to clean any remaining residue. Let them air dry completely before storing.</p>
+</details>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">Related Products</h3>
+<div class="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
+<div class="group relative">
+<div class="aspect-square w-full overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800">
+<img alt="Lash Adhesive" class="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2GbvLqLGuaBWmDjg0YtpcNaSOuBjVl49reD85qaykmhtuzFIQnvdM1sOLyInc72_P6FxQUzS5Cb65Aa1caawTf9ZBU0zCGw-dLxlmFdWRNfW0bd3LgCrUX9jlMFT6WRjtw8qiwx7pZAGhIGwg_bALISglU5JzY1yMCMVZu1e7znc4GFH7kZaDsm-Gk4vs0IOR_elmPou6HSLqS-CUIszcBBiswpbrKs-gQ1zNsjyM0jijO-5UpA2XpY-BDR6sWKNoiwl9hSPArO4"/>
+</div>
+<div class="mt-3">
+<h4 class="font-medium text-slate-800 dark:text-slate-200">Lash Adhesive</h4>
+<p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Strong hold for all-day wear.</p>
+<p class="mt-1 font-medium text-primary">$10.00</p>
+</div>
+</div>
+<div class="group relative">
+<div class="aspect-square w-full overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800">
+<img alt="Lash Applicator" class="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqrLSg08Spg_l3SpDT03GIkM2VgjDKND-U4K_x8WIKz_NRXQ_N9Z1Y2Fb8eOmP1Vh0QK7baCiVnNj-HGIjvn1-dvMFi_p73cl5m3wUAjIefDtmk7lfT54a_9FzCOGjJB35Z9q-TzzqWoJ8TOiWwlT5e9UNUZj_bNRTTr3rFWP1b9qWxk7lQOvCT7o-p7zpFHOt8z8SHbBG9edQlZjVkyN0u8hocQU6AUSnbmPg8VU3ZBQkX0VGF7iIuudARbJyFeZcjbLl_Gye5ZU"/>
+</div>
+<div class="mt-3">
+<h4 class="font-medium text-slate-800 dark:text-slate-200">Lash Applicator</h4>
+<p class="mt-1 text-sm text-slate-500 dark:text-slate-400">For easy, precise placement.</p>
+<p class="mt-1 font-medium text-primary">$8.00</p>
+</div>
+</div>
+<div class="group relative">
+<div class="aspect-square w-full overflow-hidden rounded-lg bg-slate-200 dark:bg-slate-800">
+<img alt="Eyelash Curler" class="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAijEhzro9ZT5N4FNQaMx5lqljjvJjBYz5h6399vTHp12Zb3CGg5TZEYa15KeA7CuLDcDtih-NH9OQ0hvnV_zWWQ-6VwY0BHM6beZ7BfkSZ9-R87cqqS_lDWMe8kuVjiqAzYK-VQ3i3gb7RY3JXhiue9FwGXxilkUwEGVx012SLash7eLOHDmmHocKytRCsNDToTuw6pqhbbvF9KrbTSncZ4xlySIt0xOCWSGUMYfGRk5fKo9xa1h9BAGdl2tYz-v3CuKEz0iBxOD0"/>
+</div>
+<div class="mt-3">
+<h4 class="font-medium text-slate-800 dark:text-slate-200">Eyelash Curler</h4>
+<p class="mt-1 text-sm text-slate-500 dark:text-slate-400">For a natural, lifted look.</p>
+<p class="mt-1 font-medium text-primary">$12.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-slate-200 bg-background-light dark:border-slate-800 dark:bg-background-dark">
+<div class="mx-auto max-w-7xl px-4 py-10 text-center sm:px-6 lg:px-8">
+<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+<a class="text-sm text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">Shop</a>
+<a class="text-sm text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">Tutorials</a>
+<a class="text-sm text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">About Us</a>
+<a class="text-sm text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">Contact</a>
+<a class="text-sm text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-sm text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">Terms of Service</a>
+</div>
+<div class="mt-8 flex justify-center gap-6">
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+</svg>
+</a>
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+</svg>
+</a>
+<a class="text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-primary" href="#">
+<svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+</svg>
+</a>
+</div>
+<p class="mt-8 text-sm text-slate-500 dark:text-slate-400">© 2024 Lash Luxe. All rights reserved.</p>
+</div>
+</footer>
+</div>
+
+</body></html>
