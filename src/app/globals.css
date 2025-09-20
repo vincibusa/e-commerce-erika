@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -10,10 +11,69 @@
   --color-background-light: #f8f6f7;
   --color-background-dark: #221019;
   --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
   --radius: 0.5rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
   --radius-full: 9999px;
+  
+  /* Extended Feminine Color Palette */
+  --color-pink-light: #fce7f3;
+  --color-pink-medium: #f9a8d4;
+  --color-pink-dark: #be185d;
+  --color-pink-50: #fdf2f8;
+  --color-pink-100: #fce7f3;
+  --color-pink-200: #fbcfe8;
+  --color-pink-300: #f9a8d4;
+  --color-pink-400: #f472b6;
+  --color-pink-500: #ec4899;
+  --color-pink-600: #db2777;
+  --color-pink-700: #be185d;
+  --color-pink-800: #9d174d;
+  --color-pink-900: #831843;
+  
+  /* Warm Neutrals */
+  --color-warm-white: #faf7f7;
+  --color-warm-gray-50: #faf5f5;
+  --color-warm-gray-100: #f5f5f4;
+  --color-warm-gray-200: #e7e5e4;
+  --color-warm-gray-300: #d6d3d1;
+  --color-warm-gray-400: #a8a29e;
+  --color-warm-gray-500: #78716c;
+  --color-warm-gray-600: #57534e;
+  --color-warm-gray-700: #44403c;
+  --color-warm-gray-800: #292524;
+  --color-warm-gray-900: #1c1917;
+  
+  /* Accent Colors */
+  --color-fucsia: #d946ef;
+  --color-fucsia-light: #f0abfc;
+  --color-fucsia-dark: #a21caf;
+  --color-gold: #fbbf24;
+  --color-gold-light: #fcd34d;
+  --color-gold-dark: #d97706;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #f04299 0%, #d946ef 100%);
+  --gradient-soft: linear-gradient(135deg, #fce7f3 0%, #f9a8d4 100%);
+  --gradient-glamour: linear-gradient(135deg, #d946ef 0%, #f04299 50%, #fbbf24 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(240, 66, 153, 0.9) 0%, rgba(217, 70, 239, 0.8) 100%);
+  
+  /* Soft Shadows */
+  --shadow-soft: 0 10px 25px -5px rgba(240, 66, 153, 0.1);
+  --shadow-soft-hover: 0 20px 40px -10px rgba(240, 66, 153, 0.2);
+  --shadow-pink-glow: 0 0 20px rgba(240, 66, 153, 0.3);
+  --shadow-pink-soft: 0 4px 14px 0 rgba(240, 66, 153, 0.15);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 10px 25px -3px rgba(240, 66, 153, 0.1), 0 4px 6px -2px rgba(240, 66, 153, 0.05);
+  
+  /* Soft Border Radius */
+  --radius-soft: 16px;
+  --radius-extra-soft: 24px;
+  --radius-super-soft: 32px;
+  --radius-button: 12px;
+  --radius-card: 20px;
 }
 
 .material-symbols-outlined {
@@ -123,4 +183,58 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Typography Hierarchy */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Feminine Typography Classes */
+.text-hero {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-hero-sub {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+}
+
+.text-section-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.text-elegant {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.025em;
+}
+
+.text-button {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }

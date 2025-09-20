@@ -23,42 +23,48 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-primary/20 bg-background-light/80 px-4 py-3 backdrop-blur-sm sm:px-6 lg:px-10">
+    <header className="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-[#fce7f3] bg-white/95 px-4 py-4 backdrop-blur-md shadow-[0_2px_20px_0_rgba(240,66,153,0.08)] sm:px-6 lg:px-10">
       {/* Logo and Brand */}
       <div className="flex items-center gap-3">
-        <Link href="/" className="flex items-center gap-3">
-          <svg 
-            className="h-6 w-6 text-primary" 
-            fill="none" 
-            viewBox="0 0 24 24" 
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path d="M21 4H14.3333V10.6667H7.66667V17.3333H1V20H21V4Z" fill="currentColor"></path>
-          </svg>
-          <h2 className="text-xl font-bold tracking-tight text-neutral-900">Lash Luxe</h2>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-[#d946ef] rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300 scale-110" />
+            <svg 
+              className="relative h-8 w-8 text-primary group-hover:text-[#d946ef] transition-colors duration-300" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path d="M21 4H14.3333V10.6667H7.66667V17.3333H1V20H21V4Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <h2 className="text-xl font-bold tracking-tight bg-gradient-to-r from-neutral-900 to-primary bg-clip-text text-transparent font-serif">
+            Lash Luxe
+          </h2>
         </Link>
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+      <nav className="hidden items-center gap-10 md:flex" aria-label="Main navigation">
         {navigationItems.map((item) => (
           <Link
             key={item.label}
-            className="text-sm font-medium text-neutral-600 hover:text-primary transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 rounded-md px-2 py-1"
+            className="relative text-sm font-medium text-neutral-700 hover:text-primary transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 rounded-lg px-3 py-2 group"
             href={item.href}
           >
             {item.label}
+            <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-[#d946ef] group-hover:w-full group-hover:left-0 transition-all duration-300" />
           </Link>
         ))}
       </nav>
 
       {/* Action Buttons */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-3">
         <Button
           variant="ghost"
-          size="icon"
-          className="h-10 w-10 rounded-full bg-primary/10 text-neutral-700 hover:bg-primary/20"
+          size="icon-soft"
+          className="bg-gradient-to-r from-[#fce7f3] to-[#f9a8d4] text-primary hover:from-[#f9a8d4] hover:to-[#f472b6] hover:text-white hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
           aria-label="Search products"
         >
           <span className="material-symbols-outlined text-xl">search</span>
@@ -67,13 +73,13 @@ export default function Header() {
         <CartSheet>
           <Button
             variant="ghost"
-            size="icon"
-            className="h-10 w-10 rounded-full bg-primary/10 text-neutral-700 hover:bg-primary/20 relative"
+            size="icon-soft"
+            className="bg-gradient-to-r from-[#fce7f3] to-[#f9a8d4] text-primary hover:from-[#f9a8d4] hover:to-[#f472b6] hover:text-white hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 relative"
             aria-label="Shopping cart"
           >
             <span className="material-symbols-outlined text-xl">shopping_bag</span>
             {cartItemsCount > 0 && (
-              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-medium text-white">
+              <span className="absolute -right-1 -top-1 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-primary to-[#d946ef] text-xs font-bold text-white shadow-lg">
                 {cartItemsCount}
               </span>
             )}
@@ -86,22 +92,24 @@ export default function Header() {
             <SheetTrigger asChild>
               <Button
                 variant="ghost"
-                size="icon"
-                className="h-10 w-10 rounded-full bg-primary/10 text-neutral-700 hover:bg-primary/20"
+                size="icon-soft"
+                className="bg-gradient-to-r from-[#fce7f3] to-[#f9a8d4] text-primary hover:from-[#f9a8d4] hover:to-[#f472b6] hover:text-white hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
                 aria-label="Open mobile menu"
               >
                 <span className="material-symbols-outlined text-xl">menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <SheetHeader>
-                <SheetTitle className="text-left">Menu</SheetTitle>
+            <SheetContent side="right" className="w-[320px] sm:w-[400px] bg-gradient-to-br from-white to-[#fdf2f8] border-l-2 border-[#fce7f3]">
+              <SheetHeader className="pb-6 border-b border-[#fce7f3]">
+                <SheetTitle className="text-left font-serif text-xl bg-gradient-to-r from-neutral-900 to-primary bg-clip-text text-transparent">
+                  Menu
+                </SheetTitle>
               </SheetHeader>
-              <nav className="mt-8 flex flex-col space-y-4" aria-label="Mobile navigation">
+              <nav className="mt-8 flex flex-col space-y-3" aria-label="Mobile navigation">
                 {navigationItems.map((item) => (
                   <Link
                     key={item.label}
-                    className="text-base font-medium text-neutral-600 hover:text-primary transition-colors duration-200 py-2 px-4 rounded-md hover:bg-primary/10"
+                    className="text-lg font-medium text-neutral-700 hover:text-white transition-all duration-300 py-4 px-6 rounded-2xl hover:bg-gradient-to-r hover:from-primary hover:to-[#d946ef] hover:shadow-lg hover:shadow-primary/20 min-h-[48px] flex items-center"
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

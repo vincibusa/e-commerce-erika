@@ -19,12 +19,19 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
+        feminine: "bg-gradient-to-r from-primary to-[#d946ef] text-white hover:shadow-lg hover:shadow-[#f04299]/20 hover:scale-105 transition-all duration-300 font-semibold tracking-wide rounded-lg",
+        soft: "bg-[#fce7f3] text-primary border border-[#f9a8d4] hover:bg-[#fbcfe8] hover:border-[#f472b6] transition-all duration-200 rounded-lg",
+        glamour: "bg-gradient-to-r from-[#d946ef] to-[#f04299] text-white shadow-lg shadow-[#f04299]/30 hover:shadow-xl hover:shadow-[#f04299]/40 hover:scale-105 transition-all duration-300 font-bold rounded-lg",
+        elegant: "bg-[#faf7f7] text-[#be185d] border border-[#f9a8d4] hover:bg-[#fce7f3] hover:border-[#ec4899] transition-all duration-200 font-medium rounded-lg",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        xl: "h-12 rounded-lg px-8 py-3 text-base has-[>svg]:px-6",
         icon: "size-9",
+        "icon-soft": "size-10 rounded-full",
+        "icon-lg": "size-12 rounded-full",
       },
     },
     defaultVariants: {
