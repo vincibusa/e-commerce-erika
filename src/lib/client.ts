@@ -62,6 +62,10 @@ export function getStorefrontApiClient() {
     const accessToken = getEnvVar('NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN');
     
     console.log('Creating Storefront client with:', { storeDomain, accessToken: accessToken ? 'present' : 'missing' });
+    console.log('Env vars debug:', {
+      'NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN': process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN,
+      'NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN': process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN ? 'present' : 'missing'
+    });
     
     _storefrontApiClient = createStorefrontApiClient({
       storeDomain,
