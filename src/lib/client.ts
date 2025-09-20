@@ -1,31 +1,33 @@
 import { createAdminApiClient } from '@shopify/admin-api-client';
 import { createStorefrontApiClient } from '@shopify/storefront-api-client';
 
-// Funzione per ottenere le variabili d'ambiente con fallback
+// Funzione per ottenere le variabili d'ambiente (workaround per Turbopack)
 function getEnvVar(name: string): string {
-  // Variabili client-side (NEXT_PUBLIC_*)
-  if (name.startsWith('NEXT_PUBLIC_')) {
-    const value = process.env[name];
-    console.log(`Getting env var ${name}:`, value ? 'found' : 'missing');
-    if (!value) {
-      console.warn(`Missing environment variable: ${name}`);
-      console.log('Available env vars:', Object.keys(process.env).filter(k => k.startsWith('NEXT_PUBLIC_')));
-      return '';
-    }
-    return value;
+  // Workaround per Next.js 15 + Turbopack bug
+  let value: string | undefined;
+  
+  switch (name) {
+    case 'NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN':
+      value = process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN;
+      break;
+    case 'NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN':
+      value = process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN;
+      break;
+    case 'SHOPIFY_ADMIN_ACCESS_TOKEN':
+      value = process.env.SHOPIFY_ADMIN_ACCESS_TOKEN;
+      break;
+    case 'SHOPIFY_WEBHOOK_SECRET':
+      value = process.env.SHOPIFY_WEBHOOK_SECRET;
+      break;
+    default:
+      value = process.env[name];
   }
   
-  // Variabili server-side only
-  if (typeof window !== 'undefined') {
-    console.warn(`Server-only variable ${name} accessed on client-side`);
-    return '';
-  }
-  
-  const value = process.env[name];
   if (!value) {
     console.warn(`Missing environment variable: ${name}`);
     return '';
   }
+  
   return value;
 }
 
@@ -62,10 +64,6 @@ export function getStorefrontApiClient() {
     const accessToken = getEnvVar('NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN');
     
     console.log('Creating Storefront client with:', { storeDomain, accessToken: accessToken ? 'present' : 'missing' });
-    console.log('Env vars debug:', {
-      'NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN': process.env.NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN,
-      'NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN': process.env.NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN ? 'present' : 'missing'
-    });
     
     _storefrontApiClient = createStorefrontApiClient({
       storeDomain,
