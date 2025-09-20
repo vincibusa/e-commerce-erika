@@ -1,0 +1,33 @@
+# Firebase App Hosting Configuration
+# https://firebase.google.com/docs/app-hosting/configure
+
+# Environment variables configuration
+env:
+  # Shopify Storefront API
+  - variable: NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN
+    value: uqhtvc-mq.myshopify.com
+    availability:
+      - BUILD
+      - RUNTIME
+  
+  - variable: NEXT_PUBLIC_SHOPIFY_STOREFRONT_ACCESS_TOKEN
+    value: 0f05149f939131f4f532fdcb9b17c649
+    availability:
+      - BUILD
+      - RUNTIME
+  
+  # Shopify Admin API (se necessario)
+  - variable: SHOPIFY_ADMIN_ACCESS_TOKEN
+    value: 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
+    availability:
+      - RUNTIME  # Solo runtime per sicurezza
+
+  
+
+# Runtime configuration (opzionale)
+# runConfig:
+#   cpu: 1
+#   memory: 1GiB
+#   maxInstances: 100
+#   minInstances: 0
+#   concurrency: 80

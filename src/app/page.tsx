@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FadeIn, StaggerContainer, StaggerItem, AnimatedCard } from '@/components/ui/animated';
+import { FadeIn, StaggerContainer, StaggerItem } from '@/components/ui/animated';
 import { FloatingParticles, GlowOrb } from '@/components/ui/particles';
 import { getProducts, getCollections, getProductPrice, getProductImageUrl } from '@/lib/api';
 import type { ShopifyProduct, ShopifyCollection } from '@/lib/types';
