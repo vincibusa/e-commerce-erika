@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -10,15 +11,15 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
+import CartSheet from '@/components/CartSheet';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { cartItemsCount } = useCart();
 
   const navigationItems = [
-    { label: 'Shop', href: '/category' },
-    { label: 'Product', href: '/product' },
-    { label: 'Cart', href: '/cart' },
     { label: 'Home', href: '/' },
+    { label: 'Shop', href: '/category' },
   ];
 
   return (
@@ -63,20 +64,21 @@ export default function Header() {
           <span className="material-symbols-outlined text-xl">search</span>
         </Button>
         
-        <Button
-          variant="ghost"
-          size="icon"
-          className="h-10 w-10 rounded-full bg-primary/10 text-neutral-700 hover:bg-primary/20 relative"
-          aria-label="Shopping cart"
-          asChild
-        >
-          <Link href="/cart">
+        <CartSheet>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-10 w-10 rounded-full bg-primary/10 text-neutral-700 hover:bg-primary/20 relative"
+            aria-label="Shopping cart"
+          >
             <span className="material-symbols-outlined text-xl">shopping_bag</span>
-            <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-medium text-white">
-              2
-            </span>
-          </Link>
-        </Button>
+            {cartItemsCount > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-medium text-white">
+                {cartItemsCount}
+              </span>
+            )}
+          </Button>
+        </CartSheet>
 
         {/* Mobile Menu Button - Spostato a destra */}
         <div className="md:hidden">

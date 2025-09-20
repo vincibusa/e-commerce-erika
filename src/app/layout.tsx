@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
   title: "Lash Luxe",
@@ -16,11 +17,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-background-light font-display text-neutral-800">
-        <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-          <Header />
-          {children}
-          <Footer />
-        </div>
+        <CartProvider>
+          <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </CartProvider>
       </body>
     </html>
   );

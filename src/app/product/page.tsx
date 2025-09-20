@@ -1,3 +1,7 @@
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 export default function ProductDetailPage() {
   return (
     <main className="flex-1">
@@ -48,9 +52,9 @@ export default function ProductDetailPage() {
               </div>
               <a className="ml-3 text-sm font-medium text-primary hover:text-primary/80" href="#reviews">125 reviews</a>
             </div>
-            <div className="mt-8 flex gap-4">
-              <button className="flex-1 rounded-lg bg-primary px-6 py-3 text-base font-bold text-white shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">Add to Cart</button>
-              <button className="rounded-lg bg-neutral-200 px-6 py-3 text-base font-bold text-neutral-800 hover:bg-neutral-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">Add to Wishlist</button>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <Button className="h-12 text-base font-bold">Add to Cart</Button>
+              <Button variant="outline" className="h-12 text-base font-bold">Add to Wishlist</Button>
             </div>
           </div>
         </div>
@@ -101,37 +105,27 @@ export default function ProductDetailPage() {
               <div className="w-full flex-1 space-y-1">
                 <div className="flex items-center gap-4 text-sm">
                   <p className="w-4 text-neutral-500">5</p>
-                  <div className="h-2 flex-1 rounded-full bg-neutral-200">
-                    <div className="h-2 rounded-full bg-primary" style={{width: '70%'}}></div>
-                  </div>
+                  <Progress value={70} className="flex-1 h-2" />
                   <p className="w-8 text-right text-neutral-500">70%</p>
                 </div>
                 <div className="flex items-center gap-4 text-sm">
                   <p className="w-4 text-neutral-500">4</p>
-                  <div className="h-2 flex-1 rounded-full bg-neutral-200">
-                    <div className="h-2 rounded-full bg-primary" style={{width: '20%'}}></div>
-                  </div>
+                  <Progress value={20} className="flex-1 h-2" />
                   <p className="w-8 text-right text-neutral-500">20%</p>
                 </div>
                 <div className="flex items-center gap-4 text-sm">
                   <p className="w-4 text-neutral-500">3</p>
-                  <div className="h-2 flex-1 rounded-full bg-neutral-200">
-                    <div className="h-2 rounded-full bg-primary" style={{width: '5%'}}></div>
-                  </div>
+                  <Progress value={5} className="flex-1 h-2" />
                   <p className="w-8 text-right text-neutral-500">5%</p>
                 </div>
                 <div className="flex items-center gap-4 text-sm">
                   <p className="w-4 text-neutral-500">2</p>
-                  <div className="h-2 flex-1 rounded-full bg-neutral-200">
-                    <div className="h-2 rounded-full bg-primary" style={{width: '3%'}}></div>
-                  </div>
+                  <Progress value={3} className="flex-1 h-2" />
                   <p className="w-8 text-right text-neutral-500">3%</p>
                 </div>
                 <div className="flex items-center gap-4 text-sm">
                   <p className="w-4 text-neutral-500">1</p>
-                  <div className="h-2 flex-1 rounded-full bg-neutral-200">
-                    <div className="h-2 rounded-full bg-primary" style={{width: '2%'}}></div>
-                  </div>
+                  <Progress value={2} className="flex-1 h-2" />
                   <p className="w-8 text-right text-neutral-500">2%</p>
                 </div>
               </div>
@@ -174,35 +168,32 @@ export default function ProductDetailPage() {
           {/* FAQ */}
           <div>
             <h3 className="text-xl font-bold text-neutral-900 sm:text-2xl">Frequently Asked Questions</h3>
-            <div className="mt-6 space-y-4">
-              <details className="group rounded-lg bg-neutral-50 p-4" open>
-                <summary className="flex cursor-pointer items-center justify-between font-medium text-neutral-900">
+            <Accordion type="single" collapsible className="mt-6 space-y-4">
+              <AccordionItem value="reusable" className="rounded-lg bg-neutral-50 px-4 border-none">
+                <AccordionTrigger className="font-medium text-neutral-900 hover:no-underline [&[data-state=open]]:text-primary py-4">
                   Are these lashes reusable?
-                  <svg className="h-5 w-5 transition-transform duration-300 group-open:rotate-180" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-                  </svg>
-                </summary>
-                <p className="mt-3 text-neutral-500">Yes, our Glamour Lashes are reusable. With proper care, you can wear them multiple times. Gently remove the adhesive after each use and store them in the original packaging to maintain their shape.</p>
-              </details>
-              <details className="group rounded-lg bg-neutral-50 p-4">
-                <summary className="flex cursor-pointer items-center justify-between font-medium text-neutral-900">
+                </AccordionTrigger>
+                <AccordionContent className="text-neutral-500 pb-4">
+                  Yes, our Glamour Lashes are reusable. With proper care, you can wear them multiple times. Gently remove the adhesive after each use and store them in the original packaging to maintain their shape.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="adhesive" className="rounded-lg bg-neutral-50 px-4 border-none">
+                <AccordionTrigger className="font-medium text-neutral-900 hover:no-underline [&[data-state=open]]:text-primary py-4">
                   What type of adhesive should I use?
-                  <svg className="h-5 w-5 transition-transform duration-300 group-open:rotate-180" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-                  </svg>
-                </summary>
-                <p className="mt-3 text-neutral-500">We recommend using a latex-free lash adhesive for the best results. Our Lash Luxe adhesive is specially formulated for our lashes and provides a strong, all-day hold.</p>
-              </details>
-              <details className="group rounded-lg bg-neutral-50 p-4">
-                <summary className="flex cursor-pointer items-center justify-between font-medium text-neutral-900">
+                </AccordionTrigger>
+                <AccordionContent className="text-neutral-500 pb-4">
+                  We recommend using a latex-free lash adhesive for the best results. Our Lash Luxe adhesive is specially formulated for our lashes and provides a strong, all-day hold.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="cleaning" className="rounded-lg bg-neutral-50 px-4 border-none">
+                <AccordionTrigger className="font-medium text-neutral-900 hover:no-underline [&[data-state=open]]:text-primary py-4">
                   How do I clean the lashes?
-                  <svg className="h-5 w-5 transition-transform duration-300 group-open:rotate-180" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"></path>
-                  </svg>
-                </summary>
-                <p className="mt-3 text-neutral-500">To clean, gently peel off any excess adhesive from the lash band with tweezers. You can use a cotton swab with a small amount of oil-free makeup remover to clean any remaining residue. Let them air dry completely before storing.</p>
-              </details>
-            </div>
+                </AccordionTrigger>
+                <AccordionContent className="text-neutral-500 pb-4">
+                  To clean, gently peel off any excess adhesive from the lash band with tweezers. You can use a cotton swab with a small amount of oil-free makeup remover to clean any remaining residue. Let them air dry completely before storing.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
 
           {/* Related Products */}

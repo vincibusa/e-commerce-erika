@@ -1,52 +1,80 @@
+"use client"
+
+import { useState } from "react"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Slider } from "@/components/ui/slider"
+import { Button } from "@/components/ui/button"
+
 export default function FilterSidebar() {
+  const [priceRange, setPriceRange] = useState([10, 50])
+  const [selectedLength, setSelectedLength] = useState("")
+  const [selectedStyle, setSelectedStyle] = useState("")
+  const [selectedMaterial, setSelectedMaterial] = useState("")
+
   return (
-    <aside className="w-full lg:w-1/4">
-      <div className="sticky top-28 space-y-8">
+    <aside className="w-full">
+      <div className="lg:sticky lg:top-24 space-y-6 lg:space-y-8">
         <div>
           <h3 className="text-xl font-bold text-neutral-900">Filters</h3>
           <div className="mt-4 space-y-4">
             <div>
-              <label className="block text-sm font-medium text-neutral-700" htmlFor="length">Length</label>
-              <select className="form-select mt-1 block w-full rounded-lg border border-primary/30 bg-background-light text-neutral-700 focus:border-primary focus:ring-1 focus:ring-primary" id="length">
-                <option>Select Length</option>
-                <option>Short</option>
-                <option>Medium</option>
-                <option>Long</option>
-              </select>
+              <label className="block text-sm font-medium text-neutral-700 mb-2" htmlFor="length">Length</label>
+              <Select value={selectedLength} onValueChange={setSelectedLength}>
+                <SelectTrigger className="w-full bg-background-light border-primary/30 text-neutral-700 hover:bg-background-light/80">
+                  <SelectValue placeholder="Select Length" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="short">Short</SelectItem>
+                  <SelectItem value="medium">Medium</SelectItem>
+                  <SelectItem value="long">Long</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-neutral-700" htmlFor="style">Style</label>
-              <select className="form-select mt-1 block w-full rounded-lg border border-primary/30 bg-background-light text-neutral-700 focus:border-primary focus:ring-1 focus:ring-primary" id="style">
-                <option>Select Style</option>
-                <option>Natural</option>
-                <option>Volume</option>
-                <option>Dramatic</option>
-              </select>
+              <label className="block text-sm font-medium text-neutral-700 mb-2" htmlFor="style">Style</label>
+              <Select value={selectedStyle} onValueChange={setSelectedStyle}>
+                <SelectTrigger className="w-full bg-background-light border-primary/30 text-neutral-700 hover:bg-background-light/80">
+                  <SelectValue placeholder="Select Style" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="natural">Natural</SelectItem>
+                  <SelectItem value="volume">Volume</SelectItem>
+                  <SelectItem value="dramatic">Dramatic</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-neutral-700" htmlFor="material">Material</label>
-              <select className="form-select mt-1 block w-full rounded-lg border border-primary/30 bg-background-light text-neutral-700 focus:border-primary focus:ring-1 focus:ring-primary" id="material">
-                <option>Select Material</option>
-                <option>Mink</option>
-                <option>Synthetic</option>
-                <option>Silk</option>
-              </select>
+              <label className="block text-sm font-medium text-neutral-700 mb-2" htmlFor="material">Material</label>
+              <Select value={selectedMaterial} onValueChange={setSelectedMaterial}>
+                <SelectTrigger className="w-full bg-background-light border-primary/30 text-neutral-700 hover:bg-background-light/80">
+                  <SelectValue placeholder="Select Material" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="mink">Mink</SelectItem>
+                  <SelectItem value="synthetic">Synthetic</SelectItem>
+                  <SelectItem value="silk">Silk</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
             <div>
-              <label className="block text-sm font-medium text-neutral-700" htmlFor="price">Price Range</label>
-              <div className="relative mt-4 mb-2">
-                <div className="relative h-2 rounded-full bg-primary/20">
-                  <div className="absolute h-2 rounded-full bg-primary" style={{left: '15%', right: '30%'}}></div>
-                  <div className="absolute -top-1 h-4 w-4 rounded-full border-2 border-background-light bg-primary shadow" style={{left: '15%'}}></div>
-                  <div className="absolute -top-1 h-4 w-4 rounded-full border-2 border-background-light bg-primary shadow" style={{right: '30%'}}></div>
-                </div>
-                <div className="mt-2 flex justify-between text-xs text-neutral-500">
-                  <span>$10</span>
-                  <span>$50</span>
-                </div>
+              <label className="block text-sm font-medium text-neutral-700 mb-2" htmlFor="price">Price Range</label>
+              <Slider
+                defaultValue={[10, 50]}
+                value={priceRange}
+                onValueChange={setPriceRange}
+                min={10}
+                max={100}
+                step={5}
+                className="mt-4 mb-2"
+              />
+              <div className="flex justify-between text-xs text-neutral-500">
+                <span>${priceRange[0]}</span>
+                <span>${priceRange[1]}</span>
               </div>
             </div>
-            <button className="w-full rounded-lg bg-primary py-2.5 text-sm font-bold text-white shadow-sm hover:bg-primary/90">Apply Filters</button>
+            <Button className="w-full bg-primary hover:bg-primary/90 text-white font-bold">
+              Apply Filters
+            </Button>
           </div>
         </div>
       </div>
