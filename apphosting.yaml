@@ -21,6 +21,20 @@ env:
     value: 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
     availability:
       - RUNTIME  # Solo runtime per sicurezza
+  
+  # Privacy & Cookie Settings
+  - variable: NEXT_PUBLIC_CHECKOUT_DOMAIN
+    value: uqhtvc-mq.myshopify.com
+    availability:
+      - BUILD
+      - RUNTIME
+  
+  # App Environment
+  - variable: NEXT_PUBLIC_APP_ENV
+    value: production
+    availability:
+      - BUILD
+      - RUNTIME
 
   
 

@@ -49,13 +49,6 @@ export default function Home() {
           }}
         />
         
-        {/* Gradient Overlay */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(135deg, rgba(240, 66, 153, 0.85) 0%, rgba(217, 70, 239, 0.75) 50%, rgba(251, 191, 36, 0.3) 100%)'
-          }}
-        />
         
         {/* Floating Particles */}
         <FloatingParticles count={15} className="z-10" />
